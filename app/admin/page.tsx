@@ -12,7 +12,7 @@ const AdminPage = () => {
 
         <main className=' w-full h-full flex flex-col flex-1 gap-6 '>
             <h1 className=' font-bold text-xl'>Admin Page</h1>
-            <form onSubmit={handleSubmit} className='flex flex-col gap-4 mx-auto '>
+            <form onSubmit={handleSubmit} className='flex flex-col gap-4 m-auto w-full sm:w-[600px]'>
                 <div className='flex flex-col gap-2'>
 
                     <label className='' htmlFor='newQuestion'>New Question:</label>
