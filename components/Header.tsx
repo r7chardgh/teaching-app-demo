@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import { IoHome } from 'react-icons/io5'
+import { IoGameController, IoHome } from 'react-icons/io5'
 import NavLink from './NavLInk'
 import { RiAdminFill } from 'react-icons/ri'
 
@@ -10,6 +10,7 @@ const Header = () => {
             <nav className='flex gap-3'>
                 <NavLink  href='/'>Home<IoHome /></NavLink>
                 <NavLink href='/admin'>Admin<RiAdminFill/></NavLink>
+                <NavLink href='/game'>Game<IoGameController/></NavLink>
             </nav>
         </header>
     )
