@@ -5,7 +5,7 @@ import NavLink from './NavLInk'
 import { RiAdminFill } from 'react-icons/ri'
 import { TbSun, TbSunOff } from 'react-icons/tb'
 import { BiMenu } from 'react-icons/bi'
-
+import { AnimatePresence, motion } from 'motion/react'
 const Header = () => {
     const [theme, setTheme] = useState('light');
     const [toggleMenu, setToggleMenu] = useState(false);
@@ -25,11 +25,13 @@ const Header = () => {
     }, [theme]);
 
 
+
     return (
         <header className='flex gap-6 justify-between w-full relative transition-all'>
             <nav className='flex gap-3 relative w-full'>
                 <button className='z-30 sm:hidden p-2 cursor-pointer hover:bg-neutral rounded-full text-3xl' onClick={() => setToggleMenu(!toggleMenu)}>{toggleMenu ? <IoClose /> : <BiMenu />}</button>
-                <div onClick={() => setToggleMenu(false)} className={'flex flex-col sm:flex-row gap-4 absolute z-30 sm:relative bg-background top-20 sm:top-0 w-full ' + `${toggleMenu ? ' visible' : ' invisible sm:visible'}`}>
+                <div
+                    onClick={() => setToggleMenu(false)} className={'flex flex-col sm:flex-row gap-4 absolute z-30 sm:relative bg-background top-20 sm:top-0 w-full' + `${toggleMenu ? ' visible opacity-100' : 'opacity-0 invisible sm:visible'}`}>
                     <NavLink href='/'>Home<IoHome /></NavLink>
                     <NavLink href='/admin'>Admin<RiAdminFill /></NavLink>
                     <NavLink href='/game'>Game<IoGameController /></NavLink>
@@ -41,9 +43,12 @@ const Header = () => {
                     {theme === 'dark' ? <TbSunOff /> : <TbSun />}
                 </div>
             </button>
-            <div onClick={() => setToggleMenu(false)} className={'bg-background fixed z-10 w-svw h-svh top-0 left-0 ' + `${toggleMenu ? ' visible sm:invisible' : ' invisible'}`}></div>
+            <AnimatePresence>
+                {toggleMenu && <motion.div transition={{duration:0.3}} exit={{ opacity: 0 }} onClick={() => setToggleMenu(false)} className='bg-background fixed z-10 w-svw h-svh top-0 left-0 ' ></motion.div>}
+            </AnimatePresence>
         </header>
     )
 }
 
-export default Header   
+export default Header
+{/* <div onClick={() => setToggleMenu(false)} className={'bg-background fixed z-10 w-svw h-svh top-0 left-0 ' + `${toggleMenu ? ' visible sm:invisible' : ' invisible'}`}></div> */ }
