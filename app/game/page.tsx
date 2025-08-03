@@ -28,12 +28,8 @@ const Game = () => {
     return (
         <main className=' w-full h-full flex flex-col flex-1 gap-6 '>
             <h1 className=' font-bold text-xl'>Game Page</h1>
-
-
             <ul className='flex flex-col gap-4' >
-
-
-                {questions.length > 0 && questions.map((q, i) => <li className='flex gap-2' key={i}><DraggableComponent>{shuffleArray(t2a(q.question)).map((word, index) => <p className='swappable-item bg-gray-600 p-2 rounded-xl' key={word + index}>{word}</p>)}  </DraggableComponent></li>)}
+                {questions.length > 0 && questions.map((q, i) => <li className='flex gap-2' key={i}><DraggableComponent>{shuffleArray(t2a(q.question)).map((word, index) => <p className='swappable-item bg-neutral p-2 rounded-xl' key={word + index}>{word}</p>)}  </DraggableComponent></li>)}
 
             </ul>
 

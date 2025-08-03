@@ -1,40 +1,67 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
   --foreground: #171717;
   --text: #58cc02;
   --easy: #36be8a;
   --intermediate: #beb536;
   --hard: #be4f36;
+
+  --primary: #4a90e2;
+  --secondary: #50c8b4;
+  --accent: #ff6f61;
+  --background: #f8fafc;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --neutral: #e2e8f0;
+}
+[data-theme="dark"] {
+  /* Dark Theme */
+  --primary: #1e88e5;
+  --secondary: #26a69a;
+  --accent: #ff8a65;
+  --background: #1a1a1a;
+  --text-primary: #e0e0e0;
+  --text-secondary: #b0b0b0;
+  --neutral: #424242;
 }
 
 @theme inline {
-  --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --color-linkText: var(--text);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #3a3a3a;
-    --foreground: #ededed;
-  }
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-background: var(--background);
+  --color-textPrimary: var(--text-primary);
+  --color-textSecondary: var(--text-secondary);
+  --color-neutral: var(--neutral);
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
+  color: var(--text-primary);
   font-family: Arial, Helvetica, sans-serif;
 }
-.bg-easy{
+a:hover{
+  color: var(--color-accent);
+}
+.bg-easy {
   background-color: var(--easy);
 }
-.bg-intermediate{
+.bg-intermediate {
   background-color: var(--intermediate);
 }
-.bg-hard{
+.bg-hard {
   background-color: var(--hard);
+}
+
+select option {
+  background-color: var(--color-neutral) ;
+}
+select option:nth-child(2n){
+  background-color: var(--background);
 }

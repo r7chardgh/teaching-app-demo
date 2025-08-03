@@ -11,7 +11,7 @@ interface INavLink extends IWrapper, LinkProps {
 const NavLink: React.FC<INavLink> = ({ children, href, className}) => {
   const pathname = usePathname();
   return (
-    <Link className={`flex gap-2 items-center p-2 ${pathname==href&&' text-linkText'} ${className}`} href={href}>{children}</Link>
+    <Link className={`flex gap-2 items-center p-2 ${pathname==href&&' text-accent'} ${className}`} href={href}>{children}</Link>
   )
 }
 

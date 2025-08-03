@@ -15,7 +15,7 @@ const ConnectionFailedBanner = () => {
     }, [])
 
     return (
-        <div className={'fixed bottom-15 rounded-2xl left-6 p-2 flex gap-2 bg-gray-600'}><span className={!!error ? 'text-green-400' : 'text-red-400'}>●</span>database is {!!error ? 'connected' : 'disconnected'}</div>
+        <div className={'fixed bottom-15 rounded-2xl left-6 p-2 flex gap-2 bg-neutral'}><span className={!!error ? 'text-green-400' : 'text-red-400'}>●</span>database is {!!error ? 'connected' : 'disconnected'}</div>
     )
 }
 
