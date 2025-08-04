@@ -24,8 +24,6 @@ const Header = () => {
         document.documentElement.dataset.theme = theme;
     }, [theme]);
 
-
-
     return (
         <header className='flex gap-6 justify-between w-full relative transition-all'>
             <nav className='flex gap-3 relative w-full'>
@@ -34,7 +32,6 @@ const Header = () => {
                     onClick={() => setToggleMenu(false)} className={'flex flex-col sm:flex-row gap-4 absolute z-30 sm:relative bg-background top-20 sm:top-0 w-full' + `${toggleMenu ? ' visible opacity-100' : 'opacity-0 invisible sm:visible'}`}>
                     <NavLink href='/'>Home<IoHome /></NavLink>
                     <NavLink href='/admin'>Admin<RiAdminFill /></NavLink>
-                    <NavLink href='/game'>Game<IoGameController /></NavLink>
                 </div>
             </nav>
             <button onClick={toggleTheme} className=' absolute z-30 right-0 top-3 p-2 text-2xl rounded-full cursor-pointer w-12'>
@@ -51,4 +48,3 @@ const Header = () => {
 }
 
 export default Header
-{/* <div onClick={() => setToggleMenu(false)} className={'bg-background fixed z-10 w-svw h-svh top-0 left-0 ' + `${toggleMenu ? ' visible sm:invisible' : ' invisible'}`}></div> */ }
