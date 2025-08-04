@@ -10,3 +10,12 @@ export interface IQuestion {
     question: string;
     _id: string;
 }
+
+export interface IPagination {
+    currentPage: number;
+    totalPages: number;
+    totalItems: number;
+    limit: number;
+    hasNext: boolean;
+    hasPrevious: boolean;
+}
