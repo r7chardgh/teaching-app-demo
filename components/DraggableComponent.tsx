@@ -28,7 +28,7 @@ const DraggableComponent = dynamic(
                 }
             }, [children]); // Re-initialize if children change
 
-            return <div className='flex gap-6 select-none' ref={containerRef}>{children}</div>;
+            return <div className='flex gap-6 flex-wrap select-none border-textPrimary p-4' ref={containerRef}>{children}</div>;
         };
     }),
     { ssr: false } // Disable SSR for this component
