@@ -19,3 +19,14 @@ export interface IPagination {
     hasNext: boolean;
     hasPrevious: boolean;
 }
+
+export interface IGame {
+    questions: IQuestion[];
+    pagination: IPagination;
+}
+
+export interface IAdminFormState {
+    message: string;
+    errors: { question?: string[]; level?: string[]; message?: string };
+    success: boolean;
+}
