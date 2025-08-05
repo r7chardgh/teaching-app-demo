@@ -14,3 +14,9 @@ the purpose of this demo is for ...
 1. hono js
 2. supabase (db, postgresql)
 3. cloudflare worker (host)
+
+
+## build log
+### 05/08/2025
+1. add server actions (get + create question)
+2. add cache (revaildate tag)
