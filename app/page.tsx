@@ -1,8 +1,5 @@
-'use client'
 import PageTransitionWrapper from "@/components/motionWrapper/PageTransitionWrapper";
-import { IQuestion } from "@/lib/definition";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 export default function Home() {
   const level = ['easy', 'intermediate', 'hard'];
